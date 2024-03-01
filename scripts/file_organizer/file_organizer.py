@@ -29,7 +29,6 @@ def main():
     folder_path = get_folder_path()
     files_list = get_files(folder_path)
     folders = get_folder_names_by_ext(files_list)
-    print(folders)
     create_folders(folders, folder_path)
     move_files(files_list, folder_path)
 
@@ -56,7 +55,7 @@ def create_folders(folders, path):
         try:
             makedirs(f"{path}/{folder}")
         except FileExistsError:
-            print("The file aleardy exist")
+            print(f"{folder} already exist")
             pass
 
 def move_files(files, path):
